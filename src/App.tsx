@@ -17,11 +17,11 @@ const initialState: ApplicationState = {
 
 const store = configureStore(history, initialState);
 
-function App() {
+function App(props:any) {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <AppNavigator />
+        <AppNavigator {...props} />
       </ConnectedRouter>
     </Provider>
   );

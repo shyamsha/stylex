@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import Card from "../../components/Card/Card";
+import Loader from "../../components/Loader/Loader";
+import { FlexContainer } from "../../components/Styles/styles";
+import { Users } from "./types";
 
-function Dashboard() {
-  return (
-    <React.Fragment>
-      <div>hello</div>
-    </React.Fragment>
-  )
+interface Props {
+  users: Users;
+  loading: boolean;
 }
 
-export default Dashboard
+function Dashboard(props: Props) {
+  const { users, loading } = props;
+  if (users === null && loading) {
+    return <Loader />;
+  }
+  return (
+    <React.Fragment>
+      <FlexContainer>{users !== null && <Card users={users} />}</FlexContainer>
+    </React.Fragment>
+  );
+}
+
+export default Dashboard;

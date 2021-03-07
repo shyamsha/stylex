@@ -1,35 +1,21 @@
-
 import React from "react";
-import styled from "styled-components";
+import { HeaderBar, Title, Button } from "../Styles/styles";
 
-export default function Header() {
+interface Props {
+  usersHandle: () => void;
+}
+
+export default function Header(props: Props) {
+  const { usersHandle } = props;
   return (
     <React.Fragment>
       <HeaderBar>
         <Title>StyleX</Title>
         <Title>
-          <button>
-            GetUsers
-          </button>
+          <Button onClick={() => usersHandle()}>Get Users</Button>
         </Title>
       </HeaderBar>
     </React.Fragment>
   );
 }
 
-const HeaderBar = styled.div`
-  height: 3.5rem;
-  background-color: #0a121c;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-`;
-
-const Title = styled.div`
-  font-family: "Titillium Web", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #ffffff;
-  opacity: 0.8;
-`;
