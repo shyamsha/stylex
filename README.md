@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - I developed application in typescript with react and redux.
 - I am using yarn package manager instead of npm.
 - I develop quality of code. I hope your like it my work.
+- I am using flex layout instead of grid
 
 # Project Run
 
